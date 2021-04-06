@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+# Database
+  artist_alley_db:
+    image: postgres:13.2
+    env_file:
+      - database.env
+    volumes:
+      - database-volume:/var/lib/postgresql/data/
+    ports:
+      - "14330:5432"
+
+volumes:
+    database-volume: 
